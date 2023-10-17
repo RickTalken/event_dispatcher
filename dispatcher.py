@@ -19,8 +19,8 @@ def event_dispatcher(func):
         """
         Register handler for each event type.
 
-        Recursion is done to get the true name of the wrapped function that is being registered. I think this was done 
-        to allow this decorator to work stacked on top of other decoraters.
+        Recursion is done to get the true name of the wrapped function that is being registered.
+        Recursion is done to allow this decorator to work stacked on top of other decoraters.
         """
         if handler_func is None:
             return lambda f: register(*event_types, handler_func=f)

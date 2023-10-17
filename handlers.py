@@ -12,18 +12,17 @@ def handle_event(message: Message):
 
 @handle_event.register("RainEvent", "SnowEvent")
 def handle_precipitation_event(message: Message):
-    """ This is an example of a handler that has been registered for a multiple event types."""
+    """This is an example of a handler that has been registered for a multiple event types."""
     print(f"A {message.event_type} was triggered: Bring an umbrella today.")
+
 
 @handle_event.register("TornadoEvent")
 def handle_tornado_event(message: Message):
-    """ This is an example of a handler that has been registered for a single event type."""
+    """This is an example of a handler that has been registered for a single event type."""
     print(f"A {message.event_type} was triggered: Take cover!")
 
 
 @handle_event.register("BlizzardEvent")
 def handle_blizzard_event(message: Message):
-    """ This is an example of a handler that has been registered for a single event type."""
-    print(f"An {message.event_type} was triggered: Find your snow shovel!")
-
-
+    """This is an example of a handler that has been registered for a single event type."""
+    print(f"A {message.event_type} was triggered: Find your snow shovel!")
